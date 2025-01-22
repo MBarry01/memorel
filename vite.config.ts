@@ -7,5 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/emorel/', // Ajoute cette ligne avec le nom de ton dépôt
+  base: '/memorel/', // Ajoute cette ligne avec le nom de ton dépôt
 });
