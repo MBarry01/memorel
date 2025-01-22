@@ -33,22 +33,20 @@ export function MemorialCard({ memorial, onCandleLight }: MemorialCardProps) {
           </button>
           
           <button
-  className="flex items-center gap-2 text-blue-500 hover:text-blue-600"
-  onClick={() => {
-    if (!localStorage.getItem('isSignedUp')) {
-      // Redirection vers signUp.html si l'utilisateur n'est pas inscrit
-      window.location.href = ' /memorel/src/voir_memorel/signUp.html';
-    } else {
-      // Redirection directe vers le mémorial si l'utilisateur est déjà inscrit
-      window.location.href = './index.html';
-    }
-  }}
->
-  Voir mémorial
-  <ArrowRight className="h-5 w-5" />
-</button>
-
-
+            className="flex items-center gap-2 text-blue-500 hover:text-blue-600"
+            onClick={() => {
+              if (!localStorage.getItem('isSignedUp')) {
+                // Redirection vers signUp.html si l'utilisateur n'est pas inscrit
+                window.location.href = '/memorel/src/voir_memorel/signUp.html';
+              } else {
+                // Redirection directe vers l'index ou autre page
+                window.location.href = '/memorel/index.html';
+              }
+            }}
+          >
+            Voir mémorial
+            <ArrowRight className="h-5 w-5" />
+          </button>
         </div>
       </div>
     </div>
