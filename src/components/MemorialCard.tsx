@@ -19,7 +19,7 @@ export function MemorialCard({ memorial, onCandleLight }: MemorialCardProps) {
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2 dark:text-white">{memorial.name}</h3>
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
-          Décédé(e) le {memorial.dateOfPassing}
+          Décédé le {memorial.dateOfPassing}
         </p>
         <p className="text-gray-700 dark:text-gray-300 mb-4">{memorial.description}</p>
         
@@ -37,7 +37,7 @@ export function MemorialCard({ memorial, onCandleLight }: MemorialCardProps) {
   onClick={() => {
     if (!localStorage.getItem('isSignedUp')) {
       // Redirection vers signUp.html si l'utilisateur n'est pas inscrit
-      window.location.href = '/src/voir_memorel/signUp.html';
+      window.location.href = '/memorel/src/voir_memorel/signUp.html';
     } else {
       // Redirection directe vers le mémorial si l'utilisateur est déjà inscrit
       window.location.href = './index.html';
