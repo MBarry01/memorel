@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Facebook</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1877f2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .post {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-header {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .post-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .post-header .name {
+            font-weight: bold;
+        }
+
+        .post-header .date {
+            color: #65676b;
+            font-size: 12px;
+        }
+
+        .post-image {
+            margin-top: 15px;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .reaction-buttons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .reaction-buttons i {
+            font-size: 20px;
+            color: #1877f2;
+            cursor: pointer;
+        }
+
+        .reaction-buttons span {
+            font-size: 14px;
+            color: #65676b;
+        }
+
+        .comment-section {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .comment-section input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .comment {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .comment img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1877f2;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Style pour le bouton "Créer une communauté" */
+    .button-create {
+        background-color: #007BFF; /* Bleu standard */
+        color: white;
+        border: none;
+        border-bottom: 3px solid #0056b3; /* Bordure inférieure pour l'effet */
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .button-create:hover {
+        background-color: #0056b3;
+        border-bottom: 3px solid #004494;
+    }
+
+    /* Section forum */
+    .forum-section {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        margin: auto;
+    }
+
+    /* Champs de saisie */
+    .input-field {
+        width: 95%;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none; /* Pour désactiver le redimensionnement du textarea */
+    }
+
+    .input-field:focus {
+        border-color: #007BFF;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Bouton envoyer */
+    .button-send {
+        display: block;
+        background-color: #28a745; /* Vert standard */
+        color: white;
+        border: none;
+        border-bottom: 3px solid #1e7e34;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 10px auto;
+    }
+
+    .button-send:hover {
+        background-color: #1e7e34;
+        border-bottom: 3px solid #155d27;
+    }
+
+    /* Section des messages postés */
+    .forum-posts {
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .forum-posts .post {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .forum-posts .post strong {
+        color: #007BFF;
+    }
+      /* Style pour les fichiers attachés */
+      .attachment-preview {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .attachment-preview img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    .attachment-container {
+        margin-top: 10px;
+    }
+
+    .attachment-container p {
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    /* Champ d'entrée de fichier */
+    .input-field {
+        width: 95%;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none;
+    }
+
+    .input-field:focus {
+        border-color: #007BFF;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Bouton envoyer */
+    .button-send {
+        display: block;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-bottom: 3px solid #1e7e34;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 10px auto;
+    }
+
+    .button-send:hover {
+        background-color: #1e7e34;
+        border-bottom: 3px solid #155d27;
+    }
+    .reaction-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    color: #65676b;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.reaction-buttons button:hover {
+    color: #1877f2;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Archive Facebook</h1>
+    </header>
+    <main>
+        <!-- Post 1 -->
+        <div class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/50" alt="Profile Image">
+                <div>
+                    <div class="name">Jean Dupont</div>
+                    <div class="date">Publié le : 2024-12-01</div>
+                </div>
+            </div>
+            <div class="post-image">
+                <img src="https://via.placeholder.com/600x300" alt="Post Image">
+            </div>
+            <div class="reaction-buttons">
+                <i class="fas fa-thumbs-up" onclick="updateLike(this, 'like1')"></i> <span id="like1">0</span> 
+                <i class="fas fa-comment" onclick="toggleComments(this)"></i> 
+                <i class="fas fa-share"></i>
+            </div>
+            <div class="comment-section">
+                <input type="text" placeholder="Ajoutez un commentaire...">
+                <div class="comment">
+                    <img src="https://via.placeholder.com/30" alt="User 1">
+                    <div><strong>Marie Durant</strong>: Superbe photo! 😍</div>
+                </div>
+                <div class="comment">
+                    <img src="https://via.placeholder.com/30" alt="User 2">
+                    <div><strong>Lucie Lefevre</strong>: J'adore cette plage ! 😎</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/50" alt="Profile Image">
+                <div>
+                    <div class="name">Sophie Martin</div>
+                    <div class="date">Publié le : 2024-12-02</div>
+                </div>
+            </div>
+            <div class="post-image">
+                <img src="https://via.placeholder.com/600x300" alt="Post Image">
+            </div>
+            <div class="reaction-buttons">
+                <i class="fas fa-thumbs-up" onclick="updateLike(this, 'like2')"></i> <span id="like2">0</span> 
+                <i class="fas fa-comment" onclick="toggleComments(this)"></i> 
+                <i class="fas fa-share"></i>
+            </div>
+            <div class="comment-section">
+                <input type="text" placeholder="Ajoutez un commentaire...">
+                <div class="comment">
+                    <img src="https://via.placeholder.com/30" alt="User 1">
+                    <div><strong>Paul Durand</strong>: Magnifique! 😊</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/50" alt="Profile Image">
+                <div>
+                    <div class="name">Claire Lefevre</div>
+                    <div class="date">Publié le : 2024-12-03</div>
+                </div>
+            </div>
+            <div class="post-image">
+                <img src="https://via.placeholder.com/600x300" alt="Post Image">
+            </div>
+            <div class="reaction-buttons">
+                <i class="fas fa-thumbs-up" onclick="updateLike(this, 'like3')"></i> <span id="like3">0</span> 
+                <i class="fas fa-comment" onclick="toggleComments(this)"></i> 
+                <i class="fas fa-share"></i>
+            </div>
+            <div class="comment-section">
+                <input type="text" placeholder="Ajoutez un commentaire...">
+                <div class="comment">
+                    <img src="https://via.placeholder.com/30" alt="User 1">
+                    <div><strong>John Smith</strong>: Très beau! 😍</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="profile-section" style="max-width: 600px; margin: auto; text-align: center; padding: 20px;">
+    <!-- Bouton créer une communauté -->
+    <button class="button-create" onclick="toggleForum()">Créer une communauté</button>
+
+    <!-- Section forum -->
+    <div class="forum-section" id="forum-section" style="display: none; margin-top: 20px; text-align: left;">
+        <div id="forum-posts" class="forum-posts">
+            <!-- Les messages seront ajoutés ici -->
+        </div>
+        <input type="text" placeholder="Votre pseudo..." id="user-name" class="input-field" />
+        <textarea placeholder="Écrivez votre message ici..." id="user-message" class="input-field"></textarea>
+
+        <!-- Ajout d'une pièce jointe -->
+        <input type="file" id="attachment" class="input-field" accept="image/*,application/pdf" onchange="previewAttachment()" />
+        <div id="attachment-preview" class="attachment-preview"></div>
+        
+    
+
+        <button class="button-send" onclick="submitPost()">Envoyer</button>
+    </div>
+</div>
+</div>
+</div>
+</div>
+    <footer>
+        &copy; 2024 Memorel - Tous droits réservés.
+    </footer>
+
+    <script>
+        function updateLike(element, likeId) {
+            var likeCount = document.getElementById(likeId);
+            var currentLikes = parseInt(likeCount.innerText);
+            likeCount.innerText = currentLikes + 1;
+        }
+
+        function toggleComments(element) {
+            var commentSection = element.closest('.post').querySelector('.comment-section');
+            commentSection.style.display = commentSection.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function toggleForum() {
+        const forumSection = document.getElementById("forum-section");
+        forumSection.style.display = forumSection.style.display === "none" ? "block" : "none";
+    }
+
+    // Fonction pour afficher ou masquer le forum
+    function toggleForum() {
+        const forumSection = document.getElementById("forum-section");
+        forumSection.style.display = forumSection.style.display === "none" ? "block" : "none";
+    }
+
+    function submitPost() {
+    const userName = document.getElementById("user-name").value.trim();
+    const userMessage = document.getElementById("user-message").value.trim();
+    const attachmentInput = document.getElementById("attachment");
+    const forumPosts = document.getElementById("forum-posts");
+
+    if (userName && userMessage) {
+        // Crée un ID unique pour le post
+        const postId = "post-" + Date.now();
+
+        // Crée un nouveau post
+        const newPost = document.createElement("div");
+        newPost.classList.add("post");
+        newPost.id = postId;
+
+        // Contenu du message
+        let postContent = `<strong>${userName}:</strong> <p>${userMessage}</p>`;
+
+        // Si une pièce jointe est présente, ajouter un aperçu
+        if (attachmentInput.files && attachmentInput.files[0]) {
+            const file = attachmentInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const attachmentPreview = `<img src="${e.target.result}" alt="Attachment" style="max-width:100%; border-radius:8px; margin-top:10px;">`;
+                newPost.innerHTML = postContent + attachmentPreview + createReactionButtons(postId);
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            // Pas de pièce jointe, seulement le contenu texte
+            newPost.innerHTML = postContent + createReactionButtons(postId);
+        }
+
+        // Ajouter le post dans la section des forums
+        forumPosts.appendChild(newPost);
+
+        // Réinitialise les champs de saisie
+        document.getElementById("user-name").value = "";
+        document.getElementById("user-message").value = "";
+        document.getElementById("attachment").value = "";
+
+        // Scrolle pour afficher le nouveau message
+        newPost.scrollIntoView({ behavior: "smooth", block: "end" });
+    } else {
+        alert("Veuillez remplir les champs avant d'envoyer.");
+    }
+}
+
+// Génère les boutons de réaction pour un post spécifique
+function createReactionButtons(postId) {
+    return `
+        <div class="reaction-buttons">
+            <button onclick="react('${postId}', 'like')">👍<span class="count" id="${postId}-like">0</span></button>
+            <button onclick="react('${postId}', 'adore')">❤️<span class="count" id="${postId}-adore">0</span></button>
+            <button onclick="react('${postId}', 'joyeux')">😊<span class="count" id="${postId}-joyeux">0</span></button>
+            <button onclick="react('${postId}', 'solidaire')">🤝<span class="count" id="${postId}-solidaire">0</span></button>
+            <button onclick="react('${postId}', 'triste')">😢<span class="count" id="${postId}-triste">0</span></button>
+        </div>
+    `;
+}
+
+// Fonction pour gérer les réactions
+function react(postId, type) {
+    // Trouve le compteur correspondant
+    const countSpan = document.getElementById(`${postId}-${type}`);
+    let currentCount = parseInt(countSpan.textContent);
+
+    // Incrémente et met à jour le compteur
+    currentCount++;
+    countSpan.textContent = currentCount;
+}
+
+
+
+    </script>
+</body>
+</html>

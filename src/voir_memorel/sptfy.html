@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque Spotify Interactive</title>
+    <link rel="stylesheet" href="sptfy.css">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Icône de recherche -->
+            <div class="search-icon">
+              <i class="fas fa-search"></i>
+            </div>
+          
+            <!-- Champ de recherche caché au départ -->
+            <div class="search-bar">
+              <input type="text" id="search" placeholder="Que souhaitez-vous écouter ?" />
+            </div>
+        
+            
+            <h1>Bibliothèque de Jean</h1>
+            
+            <ul class="social-links">
+              <li>
+                <a href="wsp.html" target="_blank" title="WhatsApp">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </li>
+              <li>
+                <a href="facebook.html" target="_blank" title="Facebook">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="ptrst.html" target="_blank" title="Pinterest">
+                  <i class="fab fa-pinterest"></i>
+                </a>
+              </li>
+              <li>
+                <a href="twtr.html" target="_blank" title="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+            </ul>
+          </header>
+          
+          
+          
+
+        <div class="filters">
+            <button class="filter active">Playlists</button>
+            <button class="filter">Par Spotify</button>
+            <button class="filter">Par vous</button>
+        </div>
+        
+        <div id="playlist-list" class="playlist-list">
+            <!-- Bloc interactif "Titres likés" -->
+            <div class="playlist" id="liked-songs">
+                <div class="playlist-header">
+                    <img src="https://plus.unsplash.com/premium_photo-1671493287218-428148f5b39b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Titres likés" class="playlist-image">
+                    <h2 class="title">Titres likés</h2>
+                    <p class="info">59 titres</p>
+                </div>
+            </div>
+
+            <div id="liked-songs-details" class="details hidden">
+                <div class="details-header">
+                    <img src="https://images.unsplash.com/photo-1509566393488-f7eb8dfc1a1f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Titres likés" class="details-image"><br>
+                    <div class="details-info">
+                        <h2 class="details-title">Titres likés</h2>
+                        <p>59 titres - Durée totale : ~3h</p>
+                    </div>
+                </div>
+                <table class="details-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Titre</th>
+                            <th>Lecteur</th>
+                            <th>Durée</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>wacced out murals</td>
+                            <td>
+                                <audio controls>
+                                    <source src="wacced.mp3" type="audio/mpeg">
+                                    Ton navigateur ne supporte pas le lecteur audio.
+                                </audio>
+                            </td>
+                            <td>3:46</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Sleep In The Middle</td>
+                            <td>
+                                <audio controls>
+                                    <source src="audio2.mp3" type="audio/mpeg">
+                                    Ton navigateur ne supporte pas le lecteur audio.
+                                </audio>
+                            </td>
+                            <td>4:34</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Unhappy</td>
+                            <td>
+                                <audio controls>
+                                    <source src="audio3.mp3" type="audio/mpeg">
+                                    Ton navigateur ne supporte pas le lecteur audio.
+                                </audio>
+                            </td>
+                            <td>4:07</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        
+           <div id="playlist-list" class="playlist-list">
+    <!-- Playlist "Drum" -->
+    <div class="playlist" id="drum-playlist">
+        <div class="playlist-header">
+            <img src="https://images.unsplash.com/photo-1524230659092-07f99a75c013?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Drum" class="playlist-image">
+            <h2 class="title">Drum</h2>
+            <p class="info">Barisco</p>
+        </div>
+    </div>
+
+    <!-- Détails Playlist "Drum" -->
+    <div id="drum-playlist-details" class="details hidden">
+        <div class="details-header">
+            <img src="https://images.unsplash.com/photo-1524230659092-07f99a75c013?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Drum" class="details-image">
+            <div class="details-info">
+                <h2 class="details-title">Drum</h2>
+                <p>3 titres - Durée totale : ~12m</p>
+            </div>
+        </div>
+        <table class="details-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Titre</th>
+                    <th>Lecteur</th>
+                    <th>Durée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Audio 1</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio1.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>3:46</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Audio 2</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio2.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>4:20</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Audio 3</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio3.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>4:00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Playlist "Beast Mode" -->
+    <div class="playlist" id="beast-mode-playlist">
+        <div class="playlist-header">
+            <img src="https://images.unsplash.com/photo-1486667970798-b29d1090ff95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8QmVhc3QlMjBNb2RlfGVufDB8fDB8fHww" alt="Beast Mode" class="playlist-image">
+            <h2 class="title">Beast Mode</h2>
+            <p class="info">Spotify</p>
+        </div>
+    </div>
+
+    <!-- Détails Playlist "Beast Mode" -->
+    <div id="beast-mode-playlist-details" class="details hidden">
+        <div class="details-header">
+            <img src="https://images.unsplash.com/photo-1486667970798-b29d1090ff95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8QmVhc3QlMjBNb2RlfGVufDB8fDB8fHww" alt="Beast Mode" class="details-image">
+            <div class="details-info">
+                <h2 class="details-title">Beast Mode</h2>
+                <p>3 titres - Durée totale : ~11m</p>
+            </div>
+        </div>
+        <table class="details-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Titre</th>
+                    <th>Lecteur</th>
+                    <th>Durée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Audio 1</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio1.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>3:30</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Audio 2</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio2.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>4:10</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Audio 3</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio3.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>3:50</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Playlist "Classic 🔥" -->
+    <div class="playlist" id="classic-playlist">
+        <div class="playlist-header">
+            <img src="https://images.unsplash.com/photo-1516771317026-14d76f5396e5?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Classic 🔥" class="playlist-image">
+            <h2 class="title">Classic 🔥</h2>
+            <p class="info">Barisco</p>
+        </div>
+    </div>
+
+    <!-- Détails Playlist "Classic 🔥" -->
+    <div id="classic-playlist-details" class="details hidden">
+        <div class="details-header">
+            <img src="https://images.unsplash.com/photo-1516771317026-14d76f5396e5?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Classic 🔥" class="details-image">
+            <div class="details-info">
+                <h2 class="details-title">Classic 🔥</h2>
+                <p>3 titres - Durée totale : ~12m</p>
+            </div>
+        </div>
+        <table class="details-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Titre</th>
+                    <th>Lecteur</th>
+                    <th>Durée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Audio 1</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio1.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>3:30</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Audio 2</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio2.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>4:10</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Audio 3</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio3.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>4:20</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Playlist "Podcasts" -->
+    <div class="playlist" id="podcasts-playlist">
+        <div class="playlist-header">
+            <img src="https://images.unsplash.com/photo-1619490287893-862fd1808407?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Podcasts" class="playlist-image">
+            <h2 class="title">Podcasts</h2>
+            <p class="info">Barisco</p>
+        </div>
+    </div>
+
+    <!-- Détails Playlist "Podcasts" -->
+    <div id="podcasts-playlist-details" class="details hidden">
+        <div class="details-header">
+            <img src="https://images.unsplash.com/photo-1619490287893-862fd1808407?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Podcasts" class="details-image">
+            <div class="details-info">
+                <h2 class="details-title">Podcasts</h2>
+                <p>3 titres - Durée totale : ~10m</p>
+            </div>
+        </div>
+        <table class="details-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Titre</th>
+                    <th>Lecteur</th>
+                    <th>Durée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Audio 1</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio1.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>3:10</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Audio 2</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio2.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>3:30</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Audio 3</td>
+                    <td>
+                        <audio controls>
+                            <source src="audio3.mp3" type="audio/mpeg">
+                            Ton navigateur ne supporte pas le lecteur audio.
+                        </audio>
+                    </td>
+                    <td>3:20</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+        
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+
+// Fonction pour générer les playlists avec les images spécifiques
+async function generatePlaylists() {
+    const playlistList = document.getElementById("playlist-list");
+
+    playlists.forEach(playlist => {
+        const playlistElement = document.createElement("div");
+        playlistElement.classList.add("playlist");
+
+        playlistElement.innerHTML = `
+            <img src="${playlist.imageUrl}" alt="${playlist.title}" class="playlist-image">
+            <div class="playlist-details">
+                <h2 class="title">${playlist.title}</h2>
+                <p class="info">${playlist.info}</p>
+            </div>
+            <div class="time">${playlist.time}</div>
+        `;
+
+        playlistList.appendChild(playlistElement);
+    });
+}
+
+// Filtrage dynamique des playlists
+document.getElementById("search").addEventListener("input", function (e) {
+    const searchText = e.target.value.toLowerCase();
+    const playlists = document.querySelectorAll(".playlist");
+
+    playlists.forEach((playlist) => {
+        const title = playlist.querySelector(".title").textContent.toLowerCase();
+        const info = playlist.querySelector(".info").textContent.toLowerCase();
+
+        if (title.includes(searchText) || info.includes(searchText)) {
+            playlist.style.display = "flex";
+        } else {
+            playlist.style.display = "none";
+        }
+    });
+});
+
+// Lancement
+generatePlaylists();
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Sélectionner l'élément du titre "Titres likés"
+    const likedTitle = document.getElementById("likedTitle");
+    // Sélectionner l'élément de la liste audio
+    const audioList = document.getElementById("audioList");
+
+    // Ajouter un événement au clic sur le titre
+    likedTitle.addEventListener("click", function () {
+        // Alterner la classe 'show' pour afficher/masquer la liste audio
+        audioList.classList.toggle("show");
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const likedSongs = document.getElementById("liked-songs");
+    const details = document.getElementById("liked-songs-details");
+
+    likedSongs.addEventListener("click", function () {
+        if (details.classList.contains("hidden")) {
+            details.classList.remove("hidden");
+        } else {
+            details.classList.add("hidden");
+        }
+    });
+});
+// JavaScript pour afficher/masquer la barre de recherche
+document.querySelector('.search-icon').addEventListener('click', function() {
+  const searchBar = document.querySelector('.search-bar');
+  searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
+});
+
+
+</script>

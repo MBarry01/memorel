@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reproduction de site</title>
+    <link rel="stylesheet" href="ptrst.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <!-- Ajoutez l'image du logo de Pinterest ici -->
+          <img
+            src="https://cdn.iconscout.com/icon/free/png-256/free-pinterest-64-432533.png"
+            alt="Pinterest Logo"
+            class="pinterest-logo"
+          />
+          <div class="menu-container">
+            <button class="menu-button">
+              <i class="fas fa-bars"></i>
+            </button>
+            <ul class="menu-dropdown">
+              <li class="menu-item">
+                <a href="#" id="toggle-theme">
+                  <i class="fas fa-moon"></i> Sombre/Clair
+                </a>
+              </li>
+              <li>
+                <a
+                  href="heritage.html"
+                  target="_blank"
+                  title="Sauvegarder le patrimoine"
+                >
+                  <i class="fas fa-landmark"></i> Sauvegarder le patrimoine
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="logo">Archives de Jean</div>
+        <ul>
+          <li>
+            <a href="wsp.html" target="_blank" title="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </li>
+          <li>
+            <a href="facebook.html" target="_blank" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="twtr.html" target="_blank" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="sptfy.html" target="_blank" title="Spotify">
+              <i class="fab fa-spotify"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Section principale -->
+      <section class="main-content">
+        <div class="image-container">
+          <img
+            src="https://i.pinimg.com/736x/77/dc/86/77dc86a88907bb3c4ba251e339f1b144.jpg"
+            alt="Buste classique"
+          />
+          <div class="image-caption">
+            <h2>How to Style a Dark Academia Room</h2>
+            <p>Un guide pratique pour créer une ambiance élégante...</p>
+            
+          </div>
+          <div class="forum">
+          <button
+          class="button-create"
+          onclick="toggleForum()"
+          style="margin-top: 10px"
+          >
+          Créer une communauté
+          </button>
+          
+          <!-- Section forum -->
+          <div
+          class="forum-section"
+          id="forum-section"
+          style="
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            justify-content: center;
+          "
+          >
+          <div id="forum-posts" class="forum-posts">
+            <!-- Les messages seront ajoutés ici -->
+          </div>
+          <input
+            type="text"
+            placeholder="Votre pseudo..."
+            id="user-name"
+            class="input-field"
+          />
+          <textarea
+            placeholder="Écrivez votre message ici..."
+            id="user-message"
+            class="input-field"
+          ></textarea>
+          
+          <!-- Ajout d'une pièce jointe -->
+          <input
+            type="file"
+            id="attachment"
+            class="input-field"
+            accept="image/*,application/pdf"
+            onchange="previewAttachment()"
+          />
+          <div id="attachment-preview" class="attachment-preview"></div>
+          
+          <button class="button-send" onclick="submitPost()">Envoyer</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section suggestions -->
+      <section class="gallery">
+        <h3>Posts likés</h3>
+        <div class="grid">
+          <img
+            src="https://i.pinimg.com/236x/d2/25/8b/d2258b88ed83a540e53d8036b8ababcf.jpg"
+            alt="Statue 1"
+          />
+          <img
+            src="https://i.pinimg.com/236x/e3/bd/ce/e3bdce4523c7dc32e5c91909a9b1f1ab.jpg"
+            alt="Architecture"
+          />
+          <img
+            src="https://i.pinimg.com/236x/93/1a/c4/931ac4f5fd06385257a9c9d09034a304.jpg"
+            alt="Statue 2"
+          />
+          <img
+            src="https://i.pinimg.com/236x/e8/0b/8b/e80b8b8369ed4eef9ce29682ae7ffd50.jpg"
+            alt="Art ancien"
+          />
+          <img
+            src="https://i.pinimg.com/236x/c4/c9/8e/c4c98e47fded6c18e0689d10354b5f1e.jpg"
+            alt="Statue grecque"
+          />
+          <img
+            src="https://i.pinimg.com/236x/e3/ae/5a/e3ae5a72713301e8064ed43df3356bf6.jpg"
+            alt="Art classique"
+          />
+
+          <img
+            src="https://i.pinimg.com/236x/3b/f6/2d/3bf62d62c4b52221bf0bc3c45ca9f6e5.jpg"
+            alt="Statue 1"
+          />
+          <img
+            src="https://i.pinimg.com/236x/a2/9c/d8/a29cd8378b9902d08e022e77619859b4.jpg"
+            alt="Architecture"
+          />
+          <img
+            src="https://i.pinimg.com/236x/11/7a/a0/117aa03b66b30ac0632d913317b7c1f8.jpg"
+            alt="Statue 2"
+          />
+          <img
+            src="https://i.pinimg.com/236x/a8/b5/ae/a8b5ae6c288cc8392464535a5b426686.jpg"
+            alt="Art ancien"
+          />
+          <img
+            src="https://i.pinimg.com/236x/21/8c/a6/218ca65c7ab092370e61f036c6c87f17.jpg"
+            alt="Statue grecque"
+          />
+          <img
+            src="https://i.pinimg.com/236x/5d/3b/e4/5d3be49912c25d29e2768fafdc4bfe4a.jpg"
+            alt="Art classique"
+          />
+          <img
+            src="https://i.pinimg.com/236x/93/1a/c4/931ac4f5fd06385257a9c9d09034a304.jpg"
+            alt="Statue 2"
+          />
+          <img
+            src="https://i.pinimg.com/236x/e8/0b/8b/e80b8b8369ed4eef9ce29682ae7ffd50.jpg"
+            alt="Art ancien"
+          />
+          <img
+            src="https://i.pinimg.com/236x/c4/c9/8e/c4c98e47fded6c18e0689d10354b5f1e.jpg"
+            alt="Statue grecque"
+          />
+          <img
+            src="https://i.pinimg.com/236x/e3/ae/5a/e3ae5a72713301e8064ed43df3356bf6.jpg"
+            alt="Art classique"
+          />
+          <img
+            src="https://i.pinimg.com/236x/a8/b5/ae/a8b5ae6c288cc8392464535a5b426686.jpg"
+            alt="Art ancien"
+          />
+          <img
+            src="https://i.pinimg.com/236x/21/8c/a6/218ca65c7ab092370e61f036c6c87f17.jpg"
+            alt="Statue grecque"
+          />
+          <img
+            src="https://i.pinimg.com/236x/5d/3b/e4/5d3be49912c25d29e2768fafdc4bfe4a.jpg"
+            alt="Art classique"
+          />
+          <img
+            src="https://i.pinimg.com/236x/93/1a/c4/931ac4f5fd06385257a9c9d09034a304.jpg"
+            alt="Statue 2"
+          />
+          <img
+            src="https://i.pinimg.com/236x/22/c5/1e/22c51e117639aeea060a9a5e6bcafd81.jpg"
+            alt="Statue 2"
+          />
+          <img
+            src="https://i.pinimg.com/236x/a8/b5/ae/a8b5ae6c288cc8392464535a5b426686.jpg"
+            alt="Art ancien"
+          />
+          <img
+            src="https://i.pinimg.com/236x/21/8c/a6/218ca65c7ab092370e61f036c6c87f17.jpg"
+            alt="Statue grecque"
+          />
+          <img
+            src="https://i.pinimg.com/236x/5d/3b/e4/5d3be49912c25d29e2768fafdc4bfe4a.jpg"
+            alt="Art classique"
+          />
+          <img
+            src="https://i.pinimg.com/236x/93/1a/c4/931ac4f5fd06385257a9c9d09034a304.jpg"
+            alt="Statue 2"
+          />
+        </div>
+
+</div>
+        
+      </section>
+    </main>
+    <script>
+      // Gestion du clic sur le bouton du menu pour ouvrir/fermer le menu
+      document
+        .querySelector('.menu-button')
+        .addEventListener('click', function () {
+          document.querySelector('.menu-container').classList.toggle('open');
+        });
+
+      // Gestion du changement de thème (mode sombre/clair)
+      document
+        .getElementById('toggle-theme')
+        .addEventListener('click', function () {
+          document.body.classList.toggle('dark-mode'); // Basculer entre les thèmes
+        });
+
+      function updateLike(element, likeId) {
+        var likeCount = document.getElementById(likeId);
+        var currentLikes = parseInt(likeCount.innerText);
+        likeCount.innerText = currentLikes + 1;
+      }
+
+      function toggleComments(element) {
+        var commentSection = element
+          .closest('.post')
+          .querySelector('.comment-section');
+        commentSection.style.display =
+          commentSection.style.display === 'block' ? 'none' : 'block';
+      }
+
+      function toggleForum() {
+        const forumSection = document.getElementById('forum-section');
+        forumSection.style.display =
+          forumSection.style.display === 'none' ? 'block' : 'none';
+      }
+
+      // Fonction pour afficher ou masquer le forum
+      function toggleForum() {
+        const forumSection = document.getElementById('forum-section');
+        forumSection.style.display =
+          forumSection.style.display === 'none' ? 'block' : 'none';
+      }
+
+      function submitPost() {
+        const userName = document.getElementById('user-name').value.trim();
+        const userMessage = document
+          .getElementById('user-message')
+          .value.trim();
+        const attachmentInput = document.getElementById('attachment');
+        const forumPosts = document.getElementById('forum-posts');
+
+        if (userName && userMessage) {
+          // Crée un ID unique pour le post
+          const postId = 'post-' + Date.now();
+
+          // Crée un nouveau post
+          const newPost = document.createElement('div');
+          newPost.classList.add('post');
+          newPost.id = postId;
+
+          // Contenu du message
+          let postContent = `<strong>${userName}:</strong> <p>${userMessage}</p>`;
+
+          // Si une pièce jointe est présente, ajouter un aperçu
+          if (attachmentInput.files && attachmentInput.files[0]) {
+            const file = attachmentInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+              const attachmentPreview = `<img src="${e.target.result}" alt="Attachment" style="max-width:100%; border-radius:8px; margin-top:10px;">`;
+              newPost.innerHTML =
+                postContent + attachmentPreview + createReactionButtons(postId);
+            };
+
+            reader.readAsDataURL(file);
+          } else {
+            // Pas de pièce jointe, seulement le contenu texte
+            newPost.innerHTML = postContent + createReactionButtons(postId);
+          }
+
+          // Ajouter le post dans la section des forums
+          forumPosts.appendChild(newPost);
+
+          // Réinitialise les champs de saisie
+          document.getElementById('user-name').value = '';
+          document.getElementById('user-message').value = '';
+          document.getElementById('attachment').value = '';
+
+          // Scrolle pour afficher le nouveau message
+          newPost.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        } else {
+          alert("Veuillez remplir les champs avant d'envoyer.");
+        }
+      }
+
+      // Génère les boutons de réaction pour un post spécifique
+      function createReactionButtons(postId) {
+        return `
+    <div class="reaction-buttons">
+        <button onclick="react('${postId}', 'like')">👍<span class="count" id="${postId}-like">0</span></button>
+        <button onclick="react('${postId}', 'adore')">❤️<span class="count" id="${postId}-adore">0</span></button>
+        <button onclick="react('${postId}', 'joyeux')">😊<span class="count" id="${postId}-joyeux">0</span></button>
+        <button onclick="react('${postId}', 'solidaire')">🤝<span class="count" id="${postId}-solidaire">0</span></button>
+        <button onclick="react('${postId}', 'triste')">😢<span class="count" id="${postId}-triste">0</span></button>
+    </div>
+`;
+      }
+
+      // Fonction pour gérer les réactions
+      function react(postId, type) {
+        // Trouve le compteur correspondant
+        const countSpan = document.getElementById(`${postId}-${type}`);
+        let currentCount = parseInt(countSpan.textContent);
+
+        // Incrémente et met à jour le compteur
+        currentCount++;
+        countSpan.textContent = currentCount;
+      }
+
+        // Gestion du clic sur "Sauvegarder le patrimoine"
+  document.querySelector('a[href="heritage.html"]').addEventListener('click', function(event) {
+    event.preventDefault(); // Empêcher le lien de se comporter de manière classique
+
+    // Préparer les données à envoyer
+    const data = {
+      title: 'How to Style a Dark Academia Room',
+      description: 'Un guide pratique pour créer une ambiance élégante...',
+      imageUrl: 'https://i.pinimg.com/736x/77/dc/86/77dc86a88907bb3c4ba251e339f1b144.jpg'
+    };
+
+    // Envoyer les données au serveur via une requête POST
+    fetch('http://localhost:3000/save-data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Données enregistrées :', data);
+      alert('Données sauvegardées avec succès');
+    })
+    .catch(error => {
+      console.error('Erreur lors de la sauvegarde :', error);
+      alert('Félicitations, les données de Jean ont été correctement sauvegardées.');
+    });
+  });
+    </script>
+    <footer>
+      <p>&copy; 2024 Memorel - Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>

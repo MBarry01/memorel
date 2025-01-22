@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Chat</title>
+    <style>
+      /* Global styles for the chat container */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      /* Add a responsive container */
+      .chat-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        padding: 10px;
+        overflow-y: auto; /* Scroll if messages overflow */
+        background-color: #fff;
+      }
+
+      /* Styling the chat bubbles */
+      .chat-bubble {
+        background-color: #dcf8c6;
+        border-radius: 20px;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        max-width: 70%;
+        word-wrap: break-word;
+        display: flex;
+        align-items: center;
+      }
+
+      .chat-bubble.sent {
+        background-color: #e2e2e2;
+        align-self: flex-end;
+        flex-direction: row-reverse;
+      }
+
+      /* Profil picture style */
+      .chat-bubble img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; /* Makes the image round */
+        margin-right: 10px;
+      }
+
+      /* Audio controls styling */
+      audio {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      /* Styling for the message input field */
+      input[type='text'] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        margin-top: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      /* Add responsiveness to handle small screens */
+      @media (max-width: 600px) {
+        .chat-bubble {
+          max-width: 85%;
+        }
+
+        input[type='text'] {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <!-- Message with audio and profile picture -->
+      <div class="chat-bubble">
+        <!-- Profile Picture -->
+        <img
+          src="https://i.pinimg.com/736x/27/38/6a/27386afbd93884b3f09c0422cd8b2a1c.jpg"
+          alt="Profile Picture"
+        />
+        <!-- Audio Message -->
+        <audio controls>
+          <source src="message.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+  </body>
+</html>

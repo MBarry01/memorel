@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles CSS intégrés */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        /* Définir le corps de la page avec Flexbox pour centrer le contenu et garder le footer en bas */
+html, body {
+    height: 100%; /* S'assurer que la hauteur de la page prend toute la fenêtre */
+    margin: 0;    /* Retirer les marges par défaut */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Empile le contenu du corps du haut vers le bas */
+}
+
+main {
+    flex: 1; /* Cette propriété fait en sorte que le main prenne tout l'espace disponible */
+}
+
+/* Styles pour le footer */
+footer {
+    margin-top: auto; /* Cela pousse le footer tout en bas */
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #25d366;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            background-color: #fff;
+            padding: 60px 20px;
+            background-image: url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .buttons a {
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .buttons .download {
+            background-color: #25d366;
+            color: white;
+            border: none;
+        }
+
+        .buttons .download:hover {
+            background-color: #1da851;
+        }
+
+        .buttons .login {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .buttons .login:hover {
+            background-color: white;
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+        section h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+section ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+section ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+section ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+section ul li a:hover {
+    color: #25d366;
+}
+
+ /* Style pour le bouton "Créer une communauté" */
+ .button-create {
+        background-color: #007BFF; /* Bleu standard */
+        color: white;
+        border: none;
+        border-bottom: 3px solid #0056b3; /* Bordure inférieure pour l'effet */
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .button-create:hover {
+        background-color: #0056b3;
+        border-bottom: 3px solid #004494;
+    }
+
+    /* Section forum */
+    .forum-section {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        margin: auto;
+    }
+
+    /* Champs de saisie */
+    .input-field {
+        width: 95%;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none; /* Pour désactiver le redimensionnement du textarea */
+    }
+
+    .input-field:focus {
+        border-color: #007BFF;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Bouton envoyer */
+    .button-send {
+        display: block;
+        background-color: #28a745; /* Vert standard */
+        color: white;
+        border: none;
+        border-bottom: 3px solid #1e7e34;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 10px auto;
+    }
+
+    .button-send:hover {
+        background-color: #1e7e34;
+        border-bottom: 3px solid #155d27;
+    }
+
+    /* Section des messages postés */
+    .forum-posts {
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .forum-posts .post {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .forum-posts .post strong {
+        color: #007BFF;
+    }
+      /* Style pour les fichiers attachés */
+      .attachment-preview {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .attachment-preview img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    .attachment-container {
+        margin-top: 10px;
+    }
+
+    .attachment-container p {
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    /* Champ d'entrée de fichier */
+    .input-field {
+        width: 95%;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none;
+    }
+
+    .input-field:focus {
+        border-color: #007BFF;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Bouton envoyer */
+    .button-send {
+        display: block;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-bottom: 3px solid #1e7e34;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 10px auto;
+    }
+
+    .button-send:hover {
+        background-color: #1e7e34;
+        border-bottom: 3px solid #155d27;
+    }
+    .reaction-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    color: #65676b;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.reaction-buttons button:hover {
+    color: #1877f2;
+}
+.icon-item {
+    text-align: center;
+    margin: 20px;
+}
+
+.icon-image {
+    height: 200px; /* Ajuste la taille de l'icône */
+    display: block;
+    margin: 0 auto 10px; /* Centrer l'icône et ajouter un espacement sous l'image */
+}
+
+.icon-title {
+    font-size: 1rem; /* Taille du texte */
+    font-weight: bold; /* Mettre en gras le titre */
+    color: #333; /* Couleur du texte */
+    margin-top: 5px; /* Espacement entre l'icône et le texte */
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+            <h1>WhatsApp</h1>
+        </div>
+        <nav>
+            <a href="#">Archives Documents</a>
+            <a href="#">Archives Audios</a>
+            <a href="#"> Archives Vidéos</a>
+            <a href="#">Archives Images</a>
+        </nav>
+    </header>
+    <section>
+    <h2>Archives</h2>
+    <ul>
+    <li class="icon-item">
+        <a href="./Wsp/Archives_Documents.html" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2345/2345399.png" alt="Audio Icon" class="icon-image">
+            <p class="icon-title">Archives Documents</p>
+        </a>
+    </li>
+    <ul>
+        <li class="icon-item">
+            <a href="./Wsp/Archives_Audios.html" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/1512/1512769.png" alt="Audio Icon" class="icon-image">
+                <p class="icon-title">Archives Audios</p>
+            </a>
+        </li>
+        <li class="icon-item">
+            <a href="Archives_Images/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/9783/9783970.png" alt="Image Icon" class="icon-image">
+                <p class="icon-title">Archives Images</p>
+            </a>
+        </li>
+        <li class="icon-item">
+            <a href="Archives_Videos/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/1179/1179069.png" alt="Video Icon" class="icon-image">
+                <p class="icon-title">Archives Vidéos</p>
+            </a>
+        </li>
+    </ul>
+</section>
+
+
+
+<div class="profile-section" style="max-width: 600px; margin: auto; text-align: center; padding: 20px;">
+<!-- Bouton créer une communauté -->
+<button class="button-create" onclick="toggleForum()">Créer une communauté</button>
+
+<!-- Section forum -->
+<div class="forum-section" id="forum-section" style="display: none; margin-top: 20px; text-align: left;">
+    <div id="forum-posts" class="forum-posts">
+        <!-- Les messages seront ajoutés ici -->
+    </div>
+    <input type="text" placeholder="Votre pseudo..." id="user-name" class="input-field" />
+    <textarea placeholder="Écrivez votre message ici..." id="user-message" class="input-field"></textarea>
+
+    <!-- Ajout d'une pièce jointe -->
+    <input type="file" id="attachment" class="input-field" accept="image/*,application/pdf" onchange="previewAttachment()" />
+    <div id="attachment-preview" class="attachment-preview"></div>
+    
+
+
+    <button class="button-send" onclick="submitPost()">Envoyer</button>
+</div>
+</div>
+</div>
+
+<script>
+    function updateLike(element, likeId) {
+        var likeCount = document.getElementById(likeId);
+        var currentLikes = parseInt(likeCount.innerText);
+        likeCount.innerText = currentLikes + 1;
+    }
+
+    function toggleComments(element) {
+        var commentSection = element.closest('.post').querySelector('.comment-section');
+        commentSection.style.display = commentSection.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleForum() {
+    const forumSection = document.getElementById("forum-section");
+    forumSection.style.display = forumSection.style.display === "none" ? "block" : "none";
+}
+
+// Fonction pour afficher ou masquer le forum
+function toggleForum() {
+    const forumSection = document.getElementById("forum-section");
+    forumSection.style.display = forumSection.style.display === "none" ? "block" : "none";
+}
+
+function submitPost() {
+const userName = document.getElementById("user-name").value.trim();
+const userMessage = document.getElementById("user-message").value.trim();
+const attachmentInput = document.getElementById("attachment");
+const forumPosts = document.getElementById("forum-posts");
+
+if (userName && userMessage) {
+    // Crée un ID unique pour le post
+    const postId = "post-" + Date.now();
+
+    // Crée un nouveau post
+    const newPost = document.createElement("div");
+    newPost.classList.add("post");
+    newPost.id = postId;
+
+    // Contenu du message
+    let postContent = `<strong>${userName}:</strong> <p>${userMessage}</p>`;
+
+    // Si une pièce jointe est présente, ajouter un aperçu
+    if (attachmentInput.files && attachmentInput.files[0]) {
+        const file = attachmentInput.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const attachmentPreview = `<img src="${e.target.result}" alt="Attachment" style="max-width:100%; border-radius:8px; margin-top:10px;">`;
+            newPost.innerHTML = postContent + attachmentPreview + createReactionButtons(postId);
+        };
+
+        reader.readAsDataURL(file);
+    } else {
+        // Pas de pièce jointe, seulement le contenu texte
+        newPost.innerHTML = postContent + createReactionButtons(postId);
+    }
+
+    // Ajouter le post dans la section des forums
+    forumPosts.appendChild(newPost);
+
+    // Réinitialise les champs de saisie
+    document.getElementById("user-name").value = "";
+    document.getElementById("user-message").value = "";
+    document.getElementById("attachment").value = "";
+
+    // Scrolle pour afficher le nouveau message
+    newPost.scrollIntoView({ behavior: "smooth", block: "end" });
+} else {
+    alert("Veuillez remplir les champs avant d'envoyer.");
+}
+}
+
+// Génère les boutons de réaction pour un post spécifique
+function createReactionButtons(postId) {
+return `
+    <div class="reaction-buttons">
+        <button onclick="react('${postId}', 'like')">👍<span class="count" id="${postId}-like">0</span></button>
+        <button onclick="react('${postId}', 'adore')">❤️<span class="count" id="${postId}-adore">0</span></button>
+        <button onclick="react('${postId}', 'joyeux')">😊<span class="count" id="${postId}-joyeux">0</span></button>
+        <button onclick="react('${postId}', 'solidaire')">🤝<span class="count" id="${postId}-solidaire">0</span></button>
+        <button onclick="react('${postId}', 'triste')">😢<span class="count" id="${postId}-triste">0</span></button>
+    </div>
+`;
+}
+
+// Fonction pour gérer les réactions
+function react(postId, type) {
+// Trouve le compteur correspondant
+const countSpan = document.getElementById(`${postId}-${type}`);
+let currentCount = parseInt(countSpan.textContent);
+
+// Incrémente et met à jour le compteur
+currentCount++;
+countSpan.textContent = currentCount;
+}
+
+
+
+</script>
+    <footer>
+        <p>* Des frais de données peuvent s'appliquer. Contactez votre opérateur pour en savoir plus.</p>
+    </footer>
+
+</body>
+</html>

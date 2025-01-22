@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Archive</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e1e8ed;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1da1f2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .tweet {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f8fa;
+            border-radius: 8px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .tweet img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .tweet-info {
+            flex-grow: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1da1f2;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .tweet {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tweet img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Archive Twitter</h1>
+    </header>
+    <main>
+        <div class="tweet">
+            <img src="https://via.placeholder.com/50" alt="User Image">
+            <div class="tweet-info">
+                <strong>Tweet 1 :</strong> "Bonne journée à tous ! #Bonjour"
+                <p>Publié le : 2024-12-01</p>
+            </div>
+        </div>
+        <div class="tweet">
+            <img src="https://via.placeholder.com/50" alt="User Image">
+            <div class="tweet-info">
+                <strong>Tweet 2 :</strong> "C'est l'heure du café ☕ #Café"
+                <p>Publié le : 2024-11-30</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        © 2024 Twitter Archive
+    </footer>
+</body>
+</html>

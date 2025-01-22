@@ -1,0 +1,334 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.search-bar input {
+  background-color: #2c2c2c;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 12px;
+  color: white;
+  width: 80%;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.filter {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.filter.active {
+  border-bottom: 2px solid #1DB954;
+}
+
+.playlist-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  transition: background-color 0.3s ease;
+}
+
+.playlist:hover {
+  background-color: #1c1c1c;
+}
+/* Stylisation de base */
+.playlist-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  text-align: left;
+  margin-left: 0;
+  border-radius: 8px;
+  margin-right: 40px; /* Espacement entre l'image et le texte */
+}
+
+/* Flexbox pour aligner le titre, l'info, et la date */
+.playlist-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.playlist-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: auto; /* S'assure que l'info et le titre sont à gauche */
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  cursor: pointer;
+}
+
+.info {
+  font-size: 1rem;
+  color: #666;
+}
+
+.time {
+  font-size: 0.9rem;
+  color: #999;
+  text-align: right; /* Aligne la date à droite */
+}
+
+/* Cacher la liste audio par défaut */
+.audio-list {
+  display: none;
+  margin-top: 10px;
+  padding-left: 110px;
+}
+
+.audio-list.show {
+  display: block;
+}
+
+.audio-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.audio-list li {
+  margin: 5px 0;
+}
+
+/* Prévenir que l'image ou les autres éléments de la playlist n'affectent la mise en page */
+.playlist {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+
+.playlist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.playlist:hover {
+  background-color: #1c1c1c;
+}
+
+.hidden {
+  display: none;
+}
+
+.details {
+  background-color: #181818;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+.details-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.details-table th, .details-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.details-table th {
+  background-color: #222;
+}
+
+.details-table tr:nth-child(odd) {
+  background-color: #2c2c2c;
+}
+
+.details-table tr:nth-child(even) {
+  background-color: #1c1c1c;
+}
+.details-table td audio {
+  width: 100%;
+  max-width: 250px; /* Ajuste la taille maximale du lecteur audio */
+}
+
+.details-header {
+  display: flex;
+  flex-direction: column; /* Organise l'image et le texte en une colonne */
+  justify-content: flex-end; /* Positionne le texte en bas du conteneur */
+  height: 100%; /* Assurez-vous que le conteneur a une hauteur définie */
+  text-align: left; /* Aligne le texte à gauche */
+}
+
+.details-image {
+  width: 100%; /* L'image prend toute la largeur du conteneur */
+  object-fit: cover; /* L'image garde son ratio sans être déformée */
+  height: auto; /* L'image s'ajuste en hauteur en fonction du ratio */
+}
+
+.details-info {
+  padding: 10px; /* Vous pouvez ajuster la marge selon vos préférences */
+}
+
+.details-title {
+  font-size: 1.5em;
+  margin: 0; /* Supprime les marges pour un alignement propre */
+}
+
+.details-info p {
+  font-size: 1em;
+  margin-top: 5px; /* Espacement entre le titre et le texte */
+}
+
+/* Style général de l'en-tête */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: #121212; /* Fond sombre */
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Barre de recherche cachée par défaut */
+.search-bar {
+  display: none; /* Masqué initialement */
+  margin-left: 15px;
+  transition: width 0.3s ease;
+}
+
+/* Icône de recherche */
+.search-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+}
+
+/* Logo et titre */
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+/* Menu Icon (Spotify) */
+.menu-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* Liste des liens sociaux */
+.social-links {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style des éléments de la liste des liens sociaux */
+.social-links li {
+  margin-left: 20px;
+}
+
+/* Style des liens sociaux */
+.social-links a {
+  text-decoration: none;
+  color: #1DB954; /* Couleur du logo Spotify */
+  font-size: 22px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Effet au survol pour les icônes */
+.social-links a:hover {
+  color: #1ed760;
+  transform: scale(1.1);
+}
+
+/* Réponse pour les petites tailles d'écran */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%; /* Adaptation à l'écran */
+    display: block;
+  }
+  .search-bar input {
+    width: 100%; /* Étend le champ de recherche à toute la largeur */
+  }
+
+  /* Ajustement de la mise en page sur mobile */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Icône de recherche sur mobile */
+  .search-icon {
+    margin-top: 10px;
+  }
+}

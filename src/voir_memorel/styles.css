@@ -1,0 +1,285 @@
+/* Général */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* En-tête */
+.header {
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+.header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+.header nav ul li {
+  display: inline;
+}
+.header nav ul li a {
+  text-decoration: none;
+  color: #0073e6;
+}
+
+/* Style des icônes du header */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+nav ul li {
+  display: inline;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #0073e6;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #005bb5;
+}
+
+/* Contenu principal */
+.main-content {
+  display: flex;
+  margin: 20px;
+}
+.sidebar {
+  width: 25%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-right: 20px;
+}
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.sidebar img {
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.sidebar {
+  background-color: #e6f0ff;
+  padding: 10px;
+  border: 1px solid #030303;
+}
+.info-box {
+  background-color: #e6f0ff;
+  padding: 10px;
+  color: black;
+  border: 1px solid #030303;
+  font-family: Arial, sans-serif; /* Assurez-vous que la police est définie ici */
+}
+
+.article {
+  width: 75%;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.article h3,
+.article h4 {
+  color: #0073e6;
+}
+blockquote {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #0073e6;
+  font-style: italic;
+}
+
+/* Pied de page */
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-top: 1px solid #ccc;
+}
+
+/*Page whsp*/
+
+/* Style par défaut (mode clair) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --header-bg: #f4f4f4;
+  --footer-bg: #dddddd;
+}
+
+/* Mode sombre */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --header-bg: #1f1f1f;
+  --footer-bg: #333333;
+}
+
+/* Application des variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header,
+.footer {
+  background-color: var(--header-bg);
+  color: var(--text-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.footer {
+  text-align: center;
+  padding: 1em;
+}
+/* Style général de l'en-tête */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #1a1a1a; /* Fond sombre */
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu Icon (Spotify) */
+.menu-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* Pour rendre l'image circulaire */
+  margin-right: 15px; /* Espacement entre l'icône et le titre */
+  transition: transform 0.3s ease;
+}
+
+.menu-icon img:hover {
+  transform: scale(1.1); /* Légère animation au survol */
+}
+
+/* Style général de l'en-tête */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: #121212; /* Fond sombre */
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Barre de recherche cachée par défaut */
+.search-bar {
+  display: none;
+  margin-left: 15px;
+  transition: width 0.3s ease;
+}
+
+/* Icone de recherche */
+.search-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+}
+
+/* Logo et titre */
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+/* Menu Icon (Spotify) */
+.menu-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* Liste des liens sociaux */
+.social-links {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style des éléments de la liste des liens sociaux */
+.social-links li {
+  margin-left: 20px;
+}
+
+/* Style des liens sociaux */
+.social-links a {
+  text-decoration: none;
+  color: #1DB954; /* Couleur du logo Spotify */
+  font-size: 22px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Effet au survol pour les icônes */
+.social-links a:hover {
+  color: #1ed760;
+  transform: scale(1.1);
+}
+
+/* Effet au survol pour les icônes sociales */
+.social-links a:hover .fab {
+  transform: scale(1.1);
+}
+
+/* Réponse pour les petites tailles d'écran */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%; /* Adaptation à l'écran */
+    display: block;
+  }
+  .search-bar input {
+    width: 100%; /* Étend le champ de recherche à toute la largeur */
+  }
+
+  /* Ajustement de la mise en page sur mobile */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Icône de recherche sur mobile */
+  .search-icon {
+    margin-top: 10px;
+  }
+}
+

@@ -1,0 +1,287 @@
+.header {
+  background-color: var(--bg-secondary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 0 16px;
+  height: 56px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fb-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.search-box {
+  background-color: var(--bg-primary);
+  border-radius: 50px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-box svg {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+}
+
+.search-box input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 0.9375rem;
+  width: 240px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-nav button {
+  padding: 8px 40px;
+  border-radius: 8px;
+}
+
+.header-nav button:hover {
+  background-color: var(--hover);
+}
+
+.header-nav button.active {
+  position: relative;
+  color: var(--fb-blue);
+}
+
+.header-nav button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--fb-blue);
+}
+
+.header-nav svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+}
+
+.profile-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 50px;
+  transition: background-color 0.2s;
+}
+
+.profile-button:hover {
+  background-color: var(--hover);
+}
+
+.profile-button img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.profile-button span {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+/* Style pour le bouton "Créer une communauté" */
+.button-create {
+  background-color: #007bff; /* Bleu standard */
+  color: white;
+  border: none;
+  border-bottom: 3px solid #0056b3; /* Bordure inférieure pour l'effet */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-create:hover {
+  background-color: #0056b3;
+  border-bottom: 3px solid #004494;
+}
+
+/* Section forum */
+.forum-section {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: auto;
+}
+
+/* Champs de saisie */
+.input-field {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none; /* Pour désactiver le redimensionnement du textarea */
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Bouton envoyer */
+.button-send {
+  display: block;
+  background-color: #28a745; /* Vert standard */
+  color: white;
+  border: none;
+  border-bottom: 3px solid #1e7e34;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px auto;
+}
+
+.button-send:hover {
+  background-color: #1e7e34;
+  border-bottom: 3px solid #155d27;
+}
+
+/* Section des messages postés */
+.forum-posts {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.forum-posts .post {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.forum-posts .post strong {
+  color: #007bff;
+}
+/* Style pour les fichiers attachés */
+.attachment-preview {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.attachment-preview img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.attachment-container {
+  margin-top: 10px;
+}
+
+.attachment-container p {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Champ d'entrée de fichier */
+.input-field {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Bouton envoyer */
+.button-send {
+  display: block;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-bottom: 3px solid #1e7e34;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px auto;
+}
+
+.button-send:hover {
+  background-color: #1e7e34;
+  border-bottom: 3px solid #155d27;
+}
+.reaction-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  color: #65676b;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.reaction-buttons button:hover {
+  color: #1877f2;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.social-link {
+  color: #1877f2; /* Icônes en blanc */
+  font-size: 35px; /* Taille des icônes */
+  text-decoration: none;
+  
+  padding: 10px;
+  border-radius: 50%; /* Rendre les icônes circulaires */
+  transition: background-color 0.3s ease;
+}
+
+
