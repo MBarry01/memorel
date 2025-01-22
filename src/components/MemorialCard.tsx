@@ -37,7 +37,7 @@ export function MemorialCard({ memorial, onCandleLight }: MemorialCardProps) {
   onClick={() => {
     if (!localStorage.getItem('isSignedUp')) {
       // Redirection vers signUp.html si l'utilisateur n'est pas inscrit
-      window.location.href = '/memorel/src/voir_memorel/signUp.html';
+      window.location.href = ' /memorel/src/voir_memorel/signUp.html';
     } else {
       // Redirection directe vers le mémorial si l'utilisateur est déjà inscrit
       window.location.href = './index.html';
