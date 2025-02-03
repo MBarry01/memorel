@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki Page</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Style par défaut (mode clair) */
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #000000;
+        --header-bg: #f4f4f4;
+        --footer-bg: #dddddd;
+        --main-bg: #ffffff;
+        --article-bg: #ffffff;
+        --info-box-bg: #ffffff; /* Fond clair pour info-box */
+        --blockquote-bg: #f4f4f4; /* Fond clair pour blockquote */
+      }
+
+      /* Mode sombre */
+      body.dark-mode {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --header-bg: #1f1f1f;
+        --footer-bg: #333333;
+        --main-bg: #1a1a1a;
+        --article-bg: #222222;
+        --info-box-bg: #222222;
+        --info-box-color: #1f1f1f;
+        --blockquote-bg: #222222; /* Fond sombre pour blockquote */
+      }
+
+      /* Application des variables */
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        font-family: Arial, sans-serif;
+        padding-top: 80px; /* Ajustez si nécessaire pour ne pas que le contenu soit caché sous le header */
+      }
+
+      .header,
+      .footer {
+        background-color: var(--header-bg);
+        color: var(--text-color);
+      }
+
+      /* Header fixe en haut */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 98%;
+        background-color: var(--header-bg);
+        padding: 1em;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 1em;
+      }
+
+      .main-content {
+        background-color: var(--main-bg);
+        padding: 2em;
+        min-height: 80vh;
+      }
+
+      .article {
+        background-color: var(--article-bg);
+        padding: 1em;
+        margin-top: 1em;
+      }
+
+      .sidebar {
+        padding: 1em;
+        background-color: var(--article-bg);
+        margin-right: 20px;
+        display: inline-block;
+        width: 25%;
+        vertical-align: top;
+      }
+
+      .info-box {
+        background-color: var(--info-box-bg);
+        padding: 1em;
+        margin-top: 1em;
+        color: white;
+      }
+
+      blockquote {
+        background-color: var(--blockquote-bg);
+        padding: 1em;
+        margin: 1em 0;
+        border-left: 5px solid var(--text-color);
+      }
+
+      /* Liens et icônes */
+      a {
+        color: var(--text-color);
+      }
+
+      a:hover {
+        color: #f39c12;
+      }
+
+      /* Enlever la bordure du bouton */
+      #mode-toggle {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 1.5em; /* Ajustez la taille si nécessaire */
+      }
+    </style>
+    <link rel="stylesheet" crossorigin href="/memorel/assets/wiki-CPZSTQgD.css">
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Jean Dupont</h1>
+      <button id="mode-toggle" aria-label="Changer de mode">🌙</button>
+      <nav>
+        <ul>
+          <li>
+            <a href="wsp.html" target="_blank" title="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </li>
+          <li>
+            <a href="facebook.html" target="_blank" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="ptrst.html" target="_blank" title="Pinterest">
+              <i class="fab fa-pinterest"></i>
+            </a>
+          </li>
+          <li>
+            <a href="twtr.html" target="_blank" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="sptfy.html" target="_blank" title="Spotify">
+              <i class="fab fa-spotify"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-content">
+      <aside class="sidebar">
+        <h2>Jean Dupont</h2>
+        <img
+          src="https://images.unsplash.com/photo-1552058544-f2b08422138a"
+          alt="Photo de Jean Dupont"
+        />
+        <div class="info-box">
+          <p><strong>Artiste interprète</strong></p>
+          <p>7 septembre 1980 -  3 janvier 2024</p>
+        </div>
+      </aside>
+      <article class="article">
+        <p>
+            <strong>Jean Dupont</strong> (né le 7 septembre 1980 à Paris, France) est un artiste interprète reconnu pour sa voix unique et son charisme sur scène. Depuis ses débuts dans les années 2000, il a marqué la scène musicale française par ses chansons émouvantes et ses performances mémorables.
+        </p>
+        <h3>Biographie</h3>
+        <h4>Enfance et débuts (1980-2005)</h4>
+        <p>
+            Jean Dupont grandit dans un quartier populaire de Paris, où il développe très tôt une passion pour la musique. Influencé par la musique classique, le jazz, et les grands noms de la chanson française, il commence à chanter dans des clubs locaux dès l’âge de 16 ans. Son talent exceptionnel lui permet de se faire remarquer et de signer son premier contrat avec une maison de disques en 2004.
+        </p>
+        
+        <h4>Carrière musicale (2005-2024)</h4>
+        <p>
+            Dès la sortie de son premier album, <em>Le Silence des Étoiles</em>, Jean Dupont rencontre un grand succès en France. Ses chansons, souvent introspectives et poétiques, abordent des thèmes comme l’amour, la solitude, et les luttes personnelles. Sa musique, à la croisée du pop, du rock et de la chanson française, séduit une large audience et il devient rapidement l’un des artistes les plus populaires de sa génération.
+        </p>
+    
+        <blockquote>
+            « La musique est un miroir de notre âme, un lieu où l’on peut se retrouver, se comprendre et se libérer. »
+        </blockquote>
+    
+        <h4>Impact et influence</h4>
+        <p>
+            Jean Dupont est non seulement un chanteur, mais aussi un compositeur et un acteur. Sa polyvalence lui a permis d’explorer différents horizons, du théâtre à la scène musicale. Il est reconnu pour sa capacité à transmettre une émotion pure à travers ses chansons. Ses collaborations avec des artistes internationaux et son engagement pour des causes sociales ont consolidé sa réputation de véritable artiste engagé.
+        </p>
+    
+        <h4>Vie personnelle</h4>
+        <p>
+            En dehors de la scène, Jean Dupont est un homme discret qui privilégie sa vie privée. Il est également passionné par les arts visuels et consacre une partie de son temps libre à la peinture. À travers ses œuvres, il cherche à explorer les mêmes thèmes de la condition humaine qui traversent sa musique.
+        </p>
+    
+        <p>
+            Aujourd'hui, Jean Dupont continue d'évoluer dans sa carrière, préparant un nouvel album et une tournée mondiale. Il reste une figure incontournable de la musique française contemporaine.
+        </p>
+    </article>
+    
+    </main>
+    <footer class="footer">
+      <p>©Memorel</p>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.getElementById('mode-toggle');
+        const body = document.body;
+
+        // Charger le mode préféré depuis localStorage
+        const savedMode = localStorage.getItem('theme');
+        if (savedMode === 'dark') {
+          body.classList.add('dark-mode');
+          toggleButton.textContent = '☀️';
+        } else {
+          toggleButton.textContent = '🌙';
+        }
+
+        // Ajouter un gestionnaire d'événement pour le changement de mode
+        toggleButton.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+          const isDarkMode = body.classList.contains('dark-mode');
+          toggleButton.textContent = isDarkMode ? '☀️' : '🌙';
+
+          // Sauvegarder le mode choisi dans localStorage
+          localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        });
+      });
+    </script>
+  </body>
+</html>
